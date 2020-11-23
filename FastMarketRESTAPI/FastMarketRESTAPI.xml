@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FastMarketRESTAPI</name>
+    </assembly>
+    <members>
+        <member name="F:FastMarketRESTAPI.Commons.Enums.EstadoPago.Pagado">
+            <summary>
+            Si pagó la orden en su totalidad
+            </summary>
+        </member>
+        <member name="F:FastMarketRESTAPI.Commons.Enums.EstadoPago.PorPagar">
+            <summary>
+            Si el usuario va a pagar la orden despues(no paga nada)
+            </summary>
+        </member>
+        <member name="F:FastMarketRESTAPI.Commons.Enums.EstadoPago.Pago0">
+            <summary>
+            Si es anulado el costo de la orden
+            </summary>
+        </member>
+        <member name="F:FastMarketRESTAPI.Commons.Enums.EstadoPago.PagoParte">
+            <summary>
+            Si es que el usuario dejó una parte del pago
+            </summary>
+        </member>
+        <member name="M:FastMarketRESTAPI.ConfigMapper.AutoMapperConfig.#ctor">
+            <summary>
+            Creacion del automapper para vincular las clases de model con los DTO
+            </summary>
+        </member>
+        <member name="M:FastMarketRESTAPI.Controllers.DeudaController.Update(System.Int32,FastMarketRESTAPI.Dto.DeudaUpdateDto)">
+            <summary>
+            Solo el administrador puede actualizar la deuda
+            </summary>
+            <param name="id">id de la deuda</param>
+            <param name="model">datos a actualizar de la deuda</param>
+            <returns></returns>
+        </member>
+        <member name="M:FastMarketRESTAPI.Controllers.ProductoController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            La vista de los productos para el administrador
+            </summary>
+            <param name="page">página de la cual se sacan los valores</param>
+            <param name="take">Tamaño de la página de los resultados</param>
+            <returns></returns>
+        </member>
+        <member name="M:FastMarketRESTAPI.Controllers.ProductoController.GetAllUsuario(System.Int32,System.Int32)">
+            <summary>
+            La vista de los productos para el usuario
+            </summary>
+            <param name="page">página de la cual se sacan los valores</param>
+            <param name="take">Tamaño de la página de los resultados</param>
+            <returns></returns>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaCreateOrUpdateDto.Nombre">
+            <summary>
+            Indica el nombre de la categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaCreateOrUpdateDto.Descripcion">
+            <summary>
+            Puede como no puede haber descripcion de la categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaCreateOrUpdateDto.IdProductos">
+            <summary>
+            Al momento de crear o actualizar los productos que pertenecen a esta categoria, 
+            podemos hacerlo desde la categoria o desde el producto,
+            en este caso indicamos los id de los productos que vamos a añadir a esta categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaDto.IdCategoria">
+            <summary>
+            Indica el id de categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaDto.Nombre">
+            <summary>
+            Indica el nombre de la categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaDto.Descripcion">
+            <summary>
+            Indica la descripcion de la categoria
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.CategoriaDto.ProductoCategorias">
+            <summary>
+            Indica los productos que pertenecen a esta categoria
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.CategoriaProducto_CategoriaDto">
+            <summary>
+            La relacion de CategoriaProducto para categoria
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.CategoriaProducto_ProductoDto">
+            <summary>
+            La relacion de CategoriaProducto para producto
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ClienteCreateOrUpdate">
+            <summary>
+            Para la creacion o actualizacion de los datos del cliente
+            <para>
+            Se crea en 2 casos: Cuando el cliente no tiene usuario y va a la tienda a comprar(el administrador lo crea)
+            </para><para>
+            O que el mismo usuario cliente cree sus propios datos(en la clase Cliente)
+            </para> 
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ClienteDto">
+            <summary>
+            Para mostrar los datos completos del cliente
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ClienteSimpleDto">
+            <summary>
+            Para el listado de clientes
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.DetalleOrdenCreateOrUpdateDto">
+            <summary>
+            DetalleOrden creado por el IdProducto y cantidad, para el update se debe especificar el IdDetalleOrden
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.DetalleOrdenDto">
+            <summary>
+            Llamado mediante la orden, muestra el producto y su cantidad
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.DeudaUpdateDto">
+            <summary>
+            Para actualizar la tasa de la deuda, la fecha y el estado de esta.
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.DeudaDto">
+            <summary>
+            Los datos detallados que se le dan al usuario sobre la deuda
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.DeudaSimpleDto">
+            <summary>
+            Los datos simple para un listado fácil
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.OrdenCreateOrUpdateDto">
+            <summary>
+            Para la creacion o actualizacion de las ordenes
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.OrdenDto">
+            <summary>
+            Lo que vamos a mostrar al usuario para la creacion de su orden
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.OrdenSimpleDto">
+            <summary>
+            Para el listado de las ordenes
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.PagoDto">
+            <summary>
+            Muestra un pago de una deuda
+            <para>
+            Siempre va a ser llamado desde DeudaDto
+            </para>
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ProductoCreateOrUpdateDto">
+            <summary>
+            PAra la creacion o actualizacion de las ordenes
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ProductoDto">
+            <summary>
+            Para poder devolver los datos del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoDto.Precio">
+            <summary>
+            Muestra el precio del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoDto.Imagen">
+            <summary>
+            Si se desea mostrar una imagen del producto, indicamos el enlace de este.
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoDto.ProductoCategorias">
+            <summary>
+            Muestra las categorias a las que pertenece este producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoUsuarioDto.Precio">
+            <summary>
+            Muestra el precio del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoUsuarioDto.Imagen">
+            <summary>
+            Si se desea mostrar una imagen del producto, indicamos el enlace de este.
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.ProductoSimpleDto">
+            <summary>
+            Para el listado de productos
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoSimpleDto.IdProducto">
+            <summary>
+            Identificador del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Dto.ProductoSimpleDto.Nombre">
+            <summary>
+            Nombre del producto
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.TasaCreateOrUpdateDto">
+            <summary>
+            Para crear o actualizar una tasa existente
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.TasaDto">
+            <summary>
+            Para mostrar los detalles de la tasa
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Dto.TasaSimpleDto">
+            <summary>
+            Para listar todas las tasas disponibles
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Model.Deuda.Pago">
+            <summary>
+            Un cliente puede ir pagando su deuda por partes, cada uno de los pagos se deben de registrar en la bd
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Deuda.Tasa.Publica">
+            <summary>
+            Para indicar si el usuario puede elegir esta tasa al momento de pagar, caso contrario sólo el administrador puede usarla
+            </summary>
+        </member>
+        <member name="T:FastMarketRESTAPI.Model.Productos.Producto">
+            <summary>
+            Clase producto, almacena todos los datos del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.IdProducto">
+            <summary>
+            Identificador del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.Stock">
+            <summary>
+            Stock del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.Nombre">
+            <summary>
+            Nombre del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.Precio">
+            <summary>
+            Precio del producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.Imagen">
+            <summary>
+            Imagen del producto(enlace)
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.ProductoCategorias">
+            <summary>
+            Las categorias a la que pertenece este producto
+            </summary>
+        </member>
+        <member name="P:FastMarketRESTAPI.Model.Productos.Producto.DetalleOrden">
+            <summary>
+            Las ordenes a la que pertene este producto
+            </summary>
+        </member>
+    </members>
+</doc>
